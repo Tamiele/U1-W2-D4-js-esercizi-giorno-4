@@ -25,8 +25,8 @@ function crazySum(num1, num2) {
 
 crazySum(2, 2);
 
-/*function crazySum(num1, num2) {
-  if (num1 == num2) {
+/*function crazySum(num1, num2) {         
+  if (num1 == num2) {                             
     return num1 + num2 * 3;
   } else {
     return num1 + num2;
@@ -80,17 +80,26 @@ console.log(epify(" " + "ciao"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+function check3and7(positiveNum) {
+  if (positiveNum < 0) {
+    return "il numero non è positivo";
+  } else if (positiveNum % 3 === 0) {
+    return "il numero è un multiplo di 3";
+  } else if (positiveNum % 7 === 0) {
+    return "il numero è un multiplo di 7";
+  }
+}
+console.log(check3and7(7));
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
+
+/* SCRIVI QUI LA TUA RISPOSTA */
 function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
 console.log(reverseString("ciao"));
-
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -108,7 +117,7 @@ console.log(reverseString("ciao"));
 function cutString(str) {
   return str.slice(1, -1);
 }
-console.log(cutString("ciao"));
+console.log(cutString("ciao, chi sei"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
