@@ -87,6 +87,8 @@ function check3and7(positiveNum) {
     return "il numero è un multiplo di 3";
   } else if (positiveNum % 7 === 0) {
     return "il numero è un multiplo di 7";
+  } else {
+    return "non è un multipolo di 3 o di 7";
   }
 }
 console.log(check3and7(7));
