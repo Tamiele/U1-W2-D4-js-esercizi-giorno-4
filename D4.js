@@ -48,7 +48,7 @@ function crazyDiff() {}
 function boundary(numintero) {
   if (numintero >= 20 && numintero <= 100) {
     console.log(true);
-  } else if (numintero == 400) {
+  } else if (numintero === 400) {
     console.log(true);
   } else {
     console.log(false);
@@ -69,10 +69,10 @@ function epify(stringa) {
   if (stringa.startsWith("Epicode")) {
     return stringa;
   } else {
-    return "Epicode" + stringa;
+    return "Epicode" + " " + stringa;
   }
 }
-console.log(epify(" " + "ciao"));
+console.log(epify("Epicode"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -131,6 +131,6 @@ function giveMeRandom(n) {
   }
   return numRandom;
 }
-console.log(giveMeRandom(2));
+console.log(giveMeRandom(5));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
