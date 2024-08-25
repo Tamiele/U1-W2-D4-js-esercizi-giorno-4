@@ -107,6 +107,14 @@ console.log(reverseString("ciao"));
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
+function upperFirst(str) {
+  let stringa = str.split(" ");
+  for (i = 0; i < stringa.length; i++) {
+    stringa[i] = stringa[i][0].toUpperCase(0) + stringa[i].slice(1);
+  }
+  return stringa.join(" ");
+}
+console.log(upperFirst("ciao mamma sono a scuola"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -131,6 +139,6 @@ function giveMeRandom(n) {
   }
   return numRandom;
 }
-console.log(giveMeRandom(5));
+console.log(giveMeRandom(3));
 
 /* SCRIVI QUI LA TUA RISPOSTA */

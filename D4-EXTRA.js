@@ -4,18 +4,22 @@
  Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "giveMeRandom") e per ogni elemento stampa in console
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
-*/ function checkArray(n) {
+*/
+function checkArray() {
   for (let i = 0; i < numRandom.length; i++) {
-    for (let i = 0; i < n; i++) {
-      if (n > 5) {
-        console.log("è maggiore di 5");
-      } else {
-        console.log("non è maggiore di 5");
-      }
+    if (numRandom[0] > 5) {
+      console.log("è maggiore di 5");
+    } else {
+      ("non è maggiore di 5");
+    }
+    if (numRandom[1] > 5) {
+      console.log("è maggiore di 5");
+    } else {
+      ("non è maggiore di 5");
     }
   }
 }
-console.log(checkArray(1));
+console.log(checkArray());
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -25,6 +29,14 @@ console.log(checkArray(1));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const shoppingCart = [
+  { price: 50, name: "Telefono", id: "smart", quantity: 1 },
+  { price: 50, name: "palla", id: "cuoio", quantity: 2 },
+];
+console.log(shoppingCart);
+function shoppingCartTotal() {
+  for (let i = 0; i < shoppingCart.length; i++) {}
+}
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
