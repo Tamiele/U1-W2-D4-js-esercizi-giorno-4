@@ -5,21 +5,15 @@
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
-function checkArray() {
-  for (let i = 0; i < numRandom.length; i++) {
-    if (numRandom[0] > 5) {
-      console.log("è maggiore di 5");
-    } else {
-      ("non è maggiore di 5");
-    }
-    if (numRandom[1] > 5) {
-      console.log("è maggiore di 5");
-    } else {
-      ("non è maggiore di 5");
-    }
+function checkArray(numRandom = 3) {
+  if (numRandom > 5) {
+    console.log("è maggiore di 5");
+  } else {
+    ("non è maggiore di 5");
   }
+  giveMeRandom(3);
 }
-console.log(checkArray());
+console.log(checkArray(numRandom));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -31,12 +25,18 @@ console.log(checkArray());
 /* SCRIVI QUI LA TUA RISPOSTA */
 const shoppingCart = [
   { price: 50, name: "Telefono", id: "smart", quantity: 1 },
-  { price: 50, name: "palla", id: "cuoio", quantity: 2 },
+  { price: 60, name: "palla", id: "cuoio", quantity: 2 },
 ];
-console.log(shoppingCart);
-function shoppingCartTotal() {
-  for (let i = 0; i < shoppingCart.length; i++) {}
+
+function shoppingCartTotal(shoppingCart) {
+  totalCart = 0;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    item = shoppingCart[i];
+    totalCart += item.price * item.quantity;
+  }
+  return totalCart;
 }
+console.log(shoppingCartTotal(shoppingCart));
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -44,11 +44,21 @@ function shoppingCartTotal() {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+function addToShoppingCart(shoppingCart) {
+  shoppingCart.push({ price: 70, name: "giocattolo", id: "plastica", quantity: 1 });
+  shoppingCartTotal(shoppingCart);
+  return totalCart;
+}
+console.log(addToShoppingCart(shoppingCart));
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
 */
+function maxShoppingCart(shoppingCart) {
+  shoppingCartTotal(shoppingCart);
+  return totalCart[1];
+}
+console.log(maxShoppingCart(shoppingCart));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 

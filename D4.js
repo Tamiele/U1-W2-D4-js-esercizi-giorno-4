@@ -132,8 +132,9 @@ console.log(cutString("ciao, chi sei"));
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-const numRandom = [];
+
 function giveMeRandom(n) {
+  const numRandom = [];
   for (let i = 0; i < n; i++) {
     numRandom.push(Math.floor(Math.random() * 10));
   }
