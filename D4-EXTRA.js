@@ -5,15 +5,17 @@
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
-function checkArray(numRandom = 3) {
-  if (numRandom > 5) {
-    console.log("è maggiore di 5");
-  } else {
-    ("non è maggiore di 5");
+
+function checkArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 5) {
+      console.log(array[i], "è maggiore di 5");
+    } else {
+      console.log(array[i], "non è maggiore di 5");
+    }
   }
-  giveMeRandom(3);
 }
-console.log(checkArray(numRandom));
+checkArray(numRandom);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -29,10 +31,10 @@ const shoppingCart = [
 ];
 
 function shoppingCartTotal(shoppingCart) {
-  totalCart = 0;
+  let totalCart = 0;
   for (let i = 0; i < shoppingCart.length; i++) {
-    item = shoppingCart[i];
-    totalCart += item.price * item.quantity;
+    let articoli = shoppingCart[i];
+    totalCart += articoli.price * articoli.quantity;
   }
   return totalCart;
 }
@@ -45,18 +47,29 @@ console.log(shoppingCartTotal(shoppingCart));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function addToShoppingCart(shoppingCart) {
-  shoppingCart.push({ price: 70, name: "giocattolo", id: "plastica", quantity: 1 });
-  shoppingCartTotal(shoppingCart);
-  return totalCart;
+  shoppingCart.push({
+    price: 70,
+    name: "giocattolo",
+    id: "plastica",
+    quantity: 1,
+  });
+
+  return shoppingCart.length;
 }
 console.log(addToShoppingCart(shoppingCart));
+
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
 */
-function maxShoppingCart(shoppingCart) {
-  shoppingCartTotal(shoppingCart);
-  return totalCart[1];
+let testPrice = 0;
+function maxShoppingCart(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].price > testPrice) {
+      testPrice = array[i].price;
+    }
+  }
+  return testPrice;
 }
 console.log(maxShoppingCart(shoppingCart));
 
@@ -68,24 +81,62 @@ console.log(maxShoppingCart(shoppingCart));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let ultimoOggetto = null;
+const latestShoppingCart = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    ultimoOggetto = array[i];
+  }
+  return ultimoOggetto;
+};
+console.log(latestShoppingCart(shoppingCart));
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
+// const loopUntil = function (x) {
+//   for (let i = 0; i < 3; i++) {
+//     let numRundom = Math.floor(Math.random() * 9);
+//     if (numRundom > x) {
+//       return numRundom;
+//     }
+//   }
+// };
+// console.log(loopUntil(5));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
+let arrayNum = [5, 4, 7, 2];
+const average = function (array) {
+  let totalSum = 0;
+  let aritmetica = 0;
 
+  for (let i = 0; i < array.length; i++) {
+    totalSum += array[i];
+    aritmetica = totalSum / array.length;
+  }
+  return aritmetica;
+};
+console.log(average(arrayNum));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
-
+let arrayStr = ["giovanni", "marco", "stefano", "mario"];
+const longest = function (arrayStr) {
+  let longStr = " ";
+  arrayStr.forEach((str) => {
+    if (str.length > longStr.length) {
+      longStr = str;
+    }
+  });
+  return longStr;
+};
+console.log(longest(arrayStr));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 9
